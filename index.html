@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>coquetteOS • portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--p:#ffc2d6;--p2:#ff8fab;--p3:#ffe5ec;--b:#4a2c36;--glass:rgba(255,255,255,.75)}
+*{margin:0;padding:0;box-sizing:border-box} body{background:var(--p3);font-family:Poppins,sans-serif;color:var(--b);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background: radial-gradient(var(--p) 2px, transparent 2px);background-size:32px 32px;opacity:.4;pointer-events:none}
+.ribbon{position:fixed;top:-5%;animation:fall linear forwards;z-index:999;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+/* macOS */
+.top{position:fixed;top:0;width:100%;height:28px;background:var(--glass);backdrop-filter:blur(20px);display:flex;justify-content:space-between;align-items:center;padding:0 14px;font-size:11px;z-index:10;border-bottom:1px solid var(--p)}
+.main{max-width:1150px;margin:54px auto 110px; display:grid; grid-template-columns:220px 1fr; gap:18px; padding:0 14px}
+.sidebar{background:var(--glass);backdrop-filter:blur(20px);border-radius:20px;border:1px solid #fff;padding:14px;height:fit-content;position:sticky;top:50px}
+.side-item{padding:10px 12px;border-radius:10px;cursor:pointer;display:flex;gap:10px;align-items:center;font-size:13px;margin-bottom:4px;transition:.2s}
+.side-item.active,.side-item:hover{background:white; box-shadow:0 4px 12px #ff8fab22}
+.side-item span{font-size:16px}
+.content{display:grid;gap:18px}
+.win{background:var(--glass);backdrop-filter:blur(18px);border-radius:20px;border:1.5px solid #fff;box-shadow:0 18px 40px #ff8fab2a;overflow:hidden}
+.head{height:36px;display:flex;align-items:center;gap:7px;padding:0 14px;background:linear-gradient(to right,#fff,var(--p3))}
+.dot{width:11px;height:11px;border-radius:50%} .body{padding:22px}
+h1{font-family:Instrument Serif;font-size:clamp(34px,5vw,56px);line-height:.95} h1 i{color:var(--p2);font-weight:400}
+.tag{background:var(--b);color:white;padding:5px 12px;border-radius:999px;font-size:11px;display:inline-block;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:white;border:1px dashed var(--p);border-radius:14px;padding:14px}
+input,textarea{width:100%;border:1.5px solid var(--p);background:#fffafb;padding:11px 13px;border-radius:12px;margin-bottom:10px;outline:none;font-family:Poppins}
+button{width:100%;padding:12px;border:none;border-radius:12px;background:var(--b);color:white;cursor:pointer}
+button:hover{background:var(--p2)}
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;background:var(--glass);backdrop-filter:blur(20px);border:1px solid #fff;border-radius:20px;padding:7px 12px;display:flex;gap:10px;box-shadow:0 12px 30px #ff8fab40;z-index:20}
+.dock a{width:44px;height:44px;background:white;border-radius:12px;display:grid;place-items:center;text-decoration:none;transition:.3s}
+.dock a:hover{transform:translateY(-10px) scale(1.15)}
+@media(max-width:850px){.main{grid-template-columns:1fr}.sidebar{display:flex;overflow:auto;position:relative;top:0}.side-item{white-space:nowrap}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top"><div>🍎 coquetteOS — portfolio.app</div><div>🎀 100% • Bandung • Fri 2 Oct</div></div>
+
+<div class="main">
+  <!-- SIDEBAR = 5 MENU -->
+  <div class="sidebar">
+    <div class="side-item active" onclick="go('beranda')"><span>🏠</span> beranda</div>
+    <div class="side-item" onclick="go('riwayat')"><span>📜</span> riwayat</div>
+    <div class="side-item" onclick="go('profil')"><span>💖</span> profil</div>
+    <div class="side-item" onclick="go('pengalaman')"><span>✨</span> pengalaman</div>
+    <div class="side-item" onclick="go('kontak')"><span>💌</span> kontak</div>
+    <div style="margin-top:14px;background:white;border-radius:12px;padding:10px;text-align:center">
+      <div style="font-size:40px">🎀</div>
+      <small>you's macbook<br>coquette edition</small>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- 1 BERANDA -->
+    <div class="win" id="beranda"><div class="head"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#ffbd2e"></div><div class="dot" style="background:#28ca42"></div><small style="margin-left:8px">beranda.app</small></div>
+      <div class="body"><div class="tag">🎀 open to work</div><h1>hallo! aku <i>Rika auliya</i> yang suka belajar ngoding🎀</h1><p style="margin:12px 0;opacity:.7;line-height:1.7">Portfolio pink rika terinspirasi dari macOS. Semua window bisa kamu lihat, responsif di HP, dan penuh pita jatuh-jatuh.</p></div></div>
+
+    <!-- 2 RIWAYAT -->
+    <div class="win" id="riwayat"><div class="head"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#ffbd2e"></div><div class="dot" style="background:#28ca42"></div><small style="margin-left:8px">riwayat.rtf</small></div>
+      <div class="body grid"><div class="card"><b>2026 - Sekarang</b><br>SMK Jurusan PPLG<br>Belajar HTML, CSS, JS, Figma, bikin web coquette</div><div class="card"><b>2026 - freelance</b><br>bikin foto portfolio,poster,dan landing page untuk teman</div></div></div>
+
+    <!-- 3 PROFIL -->
+    <div class="win" id="profil"><div class="head"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#ffbd2e"></div><div class="dot" style="background:#28ca42"></div><small style="margin-left:8px">profil.me</small></div>
+      <div class="body grid"><div><h1 style="font-size:32px">about me 💌</h1><p style="opacity:.7;line-height:1.7;margin-top:8px">Aku suka detail kecil, warna soft pink, dan UI yang manis tapi fungsional. Fokus di frontend aesthetic.</p><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px"><span class="tag" style="background:var(--p3);color:var(--b);border:1px solid var(--p)">HTML</span><span class="tag" style="background:var(--p3);color:var(--b);border:1px solid var(--p)">CSS</span><span class="tag" style="background:var(--p3);color:var(--b);border:1px solid var(--p)">JS</span><span class="tag" style="background:var(--p3);color:var(--b);border:1px solid var(--p)">Figma</span></div></div><div class="card" style="text-align:center"><div style="font-size:60px">🎀</div><b>Tasikmalaya, ID</b><br><small>rika • soft • creative</small></div></div></div>
+
+    <!-- 4 PENGALAMAN -->
+    <div class="win" id="pengalaman"><div class="head"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#ffbd2e"></div><div class="dot" style="background:#28ca42"></div><small style="margin-left:8px">pengalaman.app</small></div>
+      <div class="body grid"><div class="card"><b>🌸 Fotopolio</b><br>Web gallery foto aesthetic</div><div class="card"><b>🍰 Sweet Cake Landing</b><br>Landing page toko kue pink</div><div class="card"><b>🎀 coquetteOS</b><br>Tema macOS portfolio ini</div><div class="card"><b>💖 To-Do Pita</b><br>App to-do list dengan pita</div></div></div>
+
+    <!-- 5 KONTAK -->
+    <div class="win" id="kontak"><div class="head"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#ffbd2e"></div><div class="dot" style="background:#28ca42"></div><small style="margin-left:8px">kontak.mail</small></div>
+      <div class="body"><h1 style="font-size:32px">kirim pesan 💌</h1><div style="margin-top:12px"><input id="nama" placeholder="nama saya"><input id="pesan" placeholder="pesan manis"><textarea placeholder="ceritain project kamu..." rows="3"></textarea><button onclick="kirim()">kirim sekarang 🎀</button><p id="ok" style="text-align:center;margin-top:8px;font-size:12px;display:none">pesan terkirim! makasih ya 💖</p></div></div></div>
+
+  </div>
+</div>
+
+<div class="dock">
+  <a href="#" onclick="go('beranda')">🏠</a>
+  <a href="#" onclick="go('riwayat')">📜</a>
+  <a href="#" onclick="go('profil')">💖</a>
+  <a href="#" onclick="go('pengalaman')">✨</a>
+  <a href="#" onclick="go('kontak')">💌</a>
+</div>
+
+<script>
+function go(id){ document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'}); document.querySelectorAll('.side-item').forEach(e=>e.classList.remove('active')); document.getElementById(id); }
+function kirim(){ document.getElementById('ok').style.display='block'; setTimeout(()=>document.getElementById('ok').style.display='none',3000); }
+// pita
+const pita=['🎀','💖','🌸','💌','🎀','✨']; setInterval(()=>{
+  let d=document.createElement('div'); d.className='ribbon'; d.innerText=pita[Math.floor(Math.random()*pita.length)];
+  d.style.left=Math.random()*100+'vw'; d.style.fontSize=(14+Math.random()*18)+'px'; d.style.animationDuration=(3+Math.random()*4)+'s';
+  document.body.appendChild(d); setTimeout(()=>d.remove(),6000);
+},180);
+</script>
+</body>
+</html>
